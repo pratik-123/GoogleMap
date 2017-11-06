@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        googleMapSetup()
+        
         return true
+    }
+    
+    func googleMapSetup(){
+        //AIzaSyCNaQlvaBEHQHaCAwEjphOhJQ2g8fj3OOs
+        GMSServices.provideAPIKey("AIzaSyCNaQlvaBEHQHaCAwEjphOhJQ2g8fj3OOs")
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

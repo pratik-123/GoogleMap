@@ -1,26 +1,81 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YAk-6u-zII">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Map View Example-->
+        <scene sceneID="tbe-7K-3qy">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapPathViewController" id="a8I-6M-saz" customClass="MapPathViewController" customModule="GoogleMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="7Y8-7T-Lrf"/>
+                        <viewControllerLayoutGuide type="bottom" id="LWU-P1-LFs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8Fa-Le-BSo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5MW-JD-zt6" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8v-CL-r6w">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Play Car">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonHandlerPlay:" destination="a8I-6M-saz" eventType="touchUpInside" id="r3D-ch-BcA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a8v-CL-r6w" firstAttribute="leading" secondItem="8Fa-Le-BSo" secondAttribute="leading" id="1Y4-Z8-VDP"/>
+                            <constraint firstItem="LWU-P1-LFs" firstAttribute="top" secondItem="5MW-JD-zt6" secondAttribute="bottom" constant="50" id="5Dr-2f-89g"/>
+                            <constraint firstItem="5MW-JD-zt6" firstAttribute="top" secondItem="7Y8-7T-Lrf" secondAttribute="bottom" id="ADr-Wo-5dM"/>
+                            <constraint firstItem="5MW-JD-zt6" firstAttribute="leading" secondItem="8Fa-Le-BSo" secondAttribute="leading" id="AcX-a3-75d"/>
+                            <constraint firstItem="a8v-CL-r6w" firstAttribute="top" secondItem="5MW-JD-zt6" secondAttribute="bottom" id="bB3-xT-Cuf"/>
+                            <constraint firstAttribute="trailing" secondItem="a8v-CL-r6w" secondAttribute="trailing" id="juE-5E-PM1"/>
+                            <constraint firstItem="LWU-P1-LFs" firstAttribute="top" secondItem="a8v-CL-r6w" secondAttribute="bottom" id="nd4-me-k5M"/>
+                            <constraint firstAttribute="trailing" secondItem="5MW-JD-zt6" secondAttribute="trailing" id="o0K-36-bRL"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Map View Example" id="J7h-Iw-p2X"/>
+                    <connections>
+                        <outlet property="buttonPlay" destination="a8v-CL-r6w" id="D2z-I4-8kM"/>
+                        <outlet property="mapView" destination="5MW-JD-zt6" id="lMA-TS-lbR"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MWv-Hm-G8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1616.8" y="115.59220389805098"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s7Q-Ml-icW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YAk-6u-zII" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="my4-me-Ssy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a8I-6M-saz" kind="relationship" relationship="rootViewController" id="rub-iU-T3G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EF6-P2-GT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="116"/>
         </scene>
     </scenes>
 </document>
