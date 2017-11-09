@@ -5,7 +5,6 @@ target 'GoogleMap' do
   use_frameworks!
 
   pod 'GoogleMaps'
-  pod 'Alamofire', '~> 4.5'
 
 
 end
