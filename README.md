@@ -1,5 +1,5 @@
 # GoogleMap
-Google Map with Create Path and play vehicle on path
+Google Map with Create Path and show a vehical moment replay on path
 
   - Google Map
   - Path
